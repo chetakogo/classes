@@ -8,7 +8,7 @@ import Undead from '../undead';
 import Zombie from '../zombie';
 
 test('new objec with type zombie', () => {
-  const result = new Zombie('Rick', 'Zombie');
+  const result = new Zombie('Rick');
   const newObject = {
     name: 'Rick',
     type: 'Zombie',
@@ -21,7 +21,7 @@ test('new objec with type zombie', () => {
 });
 
 test('new objec with type bowman', () => {
-  const result = new Bowman('Rick', 'Bowman');
+  const result = new Bowman('Rick');
   const newObject = {
     name: 'Rick',
     type: 'Bowman',
@@ -33,21 +33,21 @@ test('new objec with type bowman', () => {
   expect(result).toEqual(newObject);
 });
 
-test('new objec with type deamon', () => {
-  const result = new Daemon('Rick', 'Deamon');
-  const newObject = {
+test('new objec with type daemon', () => {
+  const result = new Daemon('Rick');
+  const test = {
     name: 'Rick',
-    type: 'Deamon',
+    type: 'Daemon',
     health: 100,
     level: 1,
     attack: 10,
     defence: 40,
   };
-  expect(result).toEqual(newObject);
+  expect(result).toEqual(test);
 });
 
 test('new objec with type magician', () => {
-  const result = new Magician('Rick', 'Magician');
+  const result = new Magician('Rick');
   const newObject = {
     name: 'Rick',
     type: 'Magician',
@@ -55,13 +55,12 @@ test('new objec with type magician', () => {
     level: 1,
     attack: 10,
     defence: 40,
-
   };
   expect(result).toEqual(newObject);
 });
 
 test('new objec with type swordsman', () => {
-  const result = new Swordsman('Rick', 'Swordsman');
+  const result = new Swordsman('Rick');
   const newObject = {
     name: 'Rick',
     type: 'Swordsman',
@@ -74,7 +73,7 @@ test('new objec with type swordsman', () => {
 });
 
 test('new objec with type undead', () => {
-  const result = new Undead('Rick', 'Undead');
+  const result = new Undead('Rick');
   const newObject = {
     name: 'Rick',
     type: 'Undead',
@@ -87,21 +86,21 @@ test('new objec with type undead', () => {
 });
 
 test('name less than 2 letters', () => {
-  const expected = 'Ошибка!';
+  const expected = 'Неверные данные';
   expect(() => new Character('D', 'Daemon')).toThrowError(expected);
 });
 
 test('name more than 10 letterss', () => {
-  const expected = 'Ошибка!';
+  const expected = 'Неверные данные';
   expect(() => new Character('FlorentiusV', 'Undead')).toThrowError(expected);
 });
 
 test('name is not a string', () => {
-  const expected = 'Ошибка!';
+  const expected = 'Неверные данные';
   expect(() => new Character(1234, 'Magician')).toThrowError(expected);
 });
 
 test('non-existent type', () => {
-  const expected = 'Ошибка!';
+  const expected = 'Неверные данные';
   expect(() => new Character('David', 'Bowie')).toThrowError(expected);
 });
